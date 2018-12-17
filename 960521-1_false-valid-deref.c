@@ -1,5 +1,5 @@
-extern void __VERIFIER_error() __attribute__ ((__noreturn__));
 
+#include <assert.h>
 #include <stdlib.h>
 
 int *a, *b;
@@ -23,10 +23,11 @@ int main ()
   b = malloc (n * sizeof(*b));
   *b++ = 0;
   foo ();
+  int memcheck = 0;
   if (b[-2]) /* invalid deref */
-  { free(a); free(b-1); }
+  { free(a); free(b-1); memcheck = 1; }
   else
   { free(a); free(b-1); }
-
+  assert(memcheck == 0);
   return 0;
 }

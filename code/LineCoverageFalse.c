@@ -9,6 +9,7 @@ int main(){
           guard = 1;
           break;
         }
+        break;
     }
-    assert(guard == 0);
+    assert(guard == 1);
 }
