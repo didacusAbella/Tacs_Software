@@ -1,5 +1,5 @@
 #include <assert.h>
-
+#include <stdio.h>
 void insertionSort(int arr[], int n) 
 { 
    int i, key, j; 
@@ -23,16 +23,13 @@ int main()
 { 
     int arr[] = {12, 11, 13, 5, 6}; 
     int n = 5;
-    int guard = 0;
     insertionSort(arr, n); 
     int i;
     for(i = 0; i < n-1; i++){
         if(arr[i] > arr[i+1]){
-            guard = 1;
-            break;
+          assert(0);
+          break;
         }
-        break;
     }
-    assert(guard == 0);
     return 0; 
 } 
